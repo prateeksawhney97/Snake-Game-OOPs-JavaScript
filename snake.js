@@ -38,7 +38,7 @@ canvas.height = 500;
 
 pen = canvas.getContext('2d')
 
-pen.fillStyle("red");
+pen.fillStyle = "red";
 
 rect = {
 		x:20,
