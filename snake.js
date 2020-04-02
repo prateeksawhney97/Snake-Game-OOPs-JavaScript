@@ -1,8 +1,8 @@
-/*
+
 function init(){
 	canvas = document.getElementById('mycanvas');
-	canvas.width = 600;
-	canvas.height = 600;
+	W = canvas.width = 500;
+	H = canvas.height = 500;
 	pen = canvas.getContext('2d')
 
 	rect = {
@@ -15,36 +15,22 @@ function init(){
 }
 
 function draw(){
-	pen.fillStyle('red');
+	pen.fillStyle = "red";
+	pen.clearRect(0,0,W,H);
 	pen.fillRect(rect.x,rect.y,rect.w,rect.h);
-
 }
 
 function update(){
-
+	rect.x = rect.x + rect.speed;
+	if(rect.x > W-rect.w || rect.x < 0){
+		rect.speed = rect.speed * -1;	
+	}
 }
 
 function gameloop(){
-
+	draw();
+	update();
 }
 
 init();
 setInterval(gameloop, 100);
-*/
-
-canvas = document.getElementById("mycanvas");
-canvas.width = 500;
-canvas.height = 500;
-
-pen = canvas.getContext('2d')
-
-pen.fillStyle = "red";
-
-rect = {
-		x:20,
-		y:20,
-		w:40,
-		h:40,
-	}
-
-pen.fillRect(rect.x,rect.y,rect.w,rect.h);
