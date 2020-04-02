@@ -5,6 +5,8 @@ function init(){
 	H = canvas.height = 500;
 	pen = canvas.getContext('2d')
 
+	game_over = false;
+
 	rect = {
 		x:20,
 		y:20,
@@ -28,9 +30,12 @@ function update(){
 }
 
 function gameloop(){
+	if(game_over == true){
+		clearInterval(f);	
+	}
 	draw();
 	update();
 }
 
 init();
-setInterval(gameloop, 100);
+var f = setInterval(gameloop, 100);
