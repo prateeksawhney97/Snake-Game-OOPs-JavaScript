@@ -8,9 +8,8 @@ canvas.addEventListener('click', f);
 
 function f2(e){
 	console.log("A key got pressed", e.key);
+	return e.key;
 }
-
-document.addEventListener('keydown', f2);
 
 function init(){
 	canvas = document.getElementById('mycanvas');
@@ -36,10 +35,11 @@ function draw(){
 }
 
 function update(){
+	value = document.addEventListener('keydown', f2);
 	rect.x = rect.x + rect.speed;
-	if(rect.x > W-rect.w || rect.x < 0){
-		rect.speed = rect.speed * -1;	
-	}
+		if(rect.x > W-rect.w || rect.x < 0 || canvas.addEventListener('ArrowLeft', f2)=="ArrowLeft"){
+			rect.speed = rect.speed * -1;	
+		}
 }
 
 function gameloop(){
