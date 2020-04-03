@@ -1,3 +1,26 @@
+function init(){
+
+}
+
+function draw(){
+
+
+}
+
+
+function update(){
+
+}
+
+
+function gameloop(){
+
+}
+
+init();
+var f = setInterval(gameloop, 100); 
+/*
+
 //Event Listeners
 function f(){
 	console.log("You clicked on the canvas");
@@ -52,3 +75,7 @@ function gameloop(){
 
 init();
 var f = setInterval(gameloop, 100);
+
+
+*/
+
