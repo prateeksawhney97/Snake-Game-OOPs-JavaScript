@@ -22,8 +22,20 @@ function init(){
 				pen.fillRect(this.cells[i].x*cs,this.cells[i].y*cs,cs-2,cs-2);	
 			}
 		},
+		/*
+		updateSnake:function(){
+			console.log("updating snake");
+			this.cells.pop();
+			var headX = this.cells[0].x;
+			var headY = this.cells[0].y;
+
+			var X = headX+1;
+			var Y = headY;
+			this.cells.unshift({x:X,y:Y});
+		},*/
 
 		updateSnake:function(){
+			console.log("updating snake according to the direction");
 			this.cells.pop();
 			var headX = this.cells[0].x;
 			var headY = this.cells[0].y;
@@ -37,10 +49,19 @@ function init(){
 	snake.createSnake();
 
 
-	function keyPressed(){
-		
+	function keyPressed(e){
+		if(e.key=="ArrowRight"){
+			snake.direction="right";
+		}else if(e.key=="ArrowLeft"){
+			snake.direction="left";
+		}else if(e.key=="ArrowDown"){
+			snake.direction="down";
+		}else {
+			snake.direction="up";
+		}
+		console.log(snake.direction);
 	}
-	
+
 	// Add an Event Listener on the Document Object!
 
 	//When any key is pressed, that event is referred to as the KeyDown.
