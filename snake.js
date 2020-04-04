@@ -4,6 +4,8 @@ function init(){
 	pen = canvas.getContext('2d');
 	cs=66;
 
+	food = getRandomFood();
+
 	snake = {
 		init_len:5,
 		color: "blue",
@@ -36,9 +38,20 @@ function init(){
 
 		updateSnake:function(){
 			console.log("updating snake according to the direction");
-			this.cells.pop();
+
 			var headX = this.cells[0].x;
 			var headY = this.cells[0].y;
+			
+			//we have to check if the snake has eaten the food, and if yes we have to increase the length of the snake.
+
+			if(headX==food.x && headY==food.y){
+				console.log("Food eaten");
+				food = getRandomFood();
+
+			}
+
+			//generate new food object as well.
+			this.cells.pop();
 			var nextX, nextY;
 
 			if(this.direction=="right"){
@@ -91,6 +104,9 @@ function draw(){
 
 	snake.drawSnake();
 
+	//for showing the food object
+	pen.fillRect(food.x*cs,food.y*cs,cs,cs);
+
 }
 
 
@@ -98,6 +114,17 @@ function update(){
 	snake.updateSnake();
 }
 
+function getRandomFood(){
+	var foodX = Math.round(Math.random()*(W-cs)/cs);
+	var foodY = Math.round(Math.random()*(H-cs)/cs);
+
+	var food = {
+		x:foodX,
+		y:foodY,
+		color:"red",
+	}
+	return food;
+}
 
 function gameloop(){
 	draw();
