@@ -44,6 +44,17 @@ function init(){
 			if(this.direction=="right"){
 				nextX = headX + 1;
 				nexyY = headY;
+			}else if(this.direction=="left"){
+				nextX = headX - 1;
+				nextY = headY;
+			}else if(this.direction=="down"){
+				nextX = headX;
+				//towards right is the positive x axis.
+				//towards down is the positive y axis.
+				nextY = headY + 1;
+			}else{
+				nextX = headX;
+				nextY = headY - 1;
 			}
 
 			this.cells.unshift({x:nextX,y:nextY});
