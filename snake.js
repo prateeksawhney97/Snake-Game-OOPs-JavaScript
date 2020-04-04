@@ -35,6 +35,17 @@ function init(){
 	};
 
 	snake.createSnake();
+
+
+	function keyPressed(){
+		
+	}
+	
+	// Add an Event Listener on the Document Object!
+
+	//When any key is pressed, that event is referred to as the KeyDown.
+
+	document.addEventListener('keydown', keyPressed);
 }
 
 function draw(){
