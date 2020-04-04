@@ -39,11 +39,11 @@ function init(){
 			this.cells.pop();
 			var headX = this.cells[0].x;
 			var headY = this.cells[0].y;
-			var nextX, nexyY;
+			var nextX, nextY;
 
 			if(this.direction=="right"){
 				nextX = headX + 1;
-				nexyY = headY;
+				nextY = headY;
 			}else if(this.direction=="left"){
 				nextX = headX - 1;
 				nextY = headY;
