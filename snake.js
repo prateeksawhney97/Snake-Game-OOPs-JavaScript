@@ -8,7 +8,7 @@ function init(){
 
 	//Create an image for the the food
 	food_img = new Image();
-	
+	food_img.src = "assets/apple.png";
 
 	food = getRandomFood();
 
@@ -128,7 +128,11 @@ function draw(){
 
 	//for showing the food object
 	pen.fillStyle = food.color;
-	pen.fillRect(food.x*cs,food.y*cs,cs,cs);
+	// Food as a rectangle
+	//pen.fillRect(food.x*cs,food.y*cs,cs,cs);
+	
+	//Food as an Image of apple
+	pen.drawImage(food_img, food.x*cs,food.y*cs,cs,cs);
 
 }
 
