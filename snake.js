@@ -5,6 +5,11 @@ function init(){
 	cs=66;
 	game_over=false;
 
+
+	//Create an image for the the food
+	food_img = new Image();
+	
+
 	food = getRandomFood();
 
 	snake = {
