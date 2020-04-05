@@ -148,6 +148,7 @@ function gameloop(){
 	if(game_over==true){
 		clearInterval(f);
 		alert("Game Over");
+		return;
 	}
 	draw();
 	update();
