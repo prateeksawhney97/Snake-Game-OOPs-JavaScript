@@ -3,6 +3,7 @@ function init(){
 	W = H = canvas.width = canvas.height = 1000;
 	pen = canvas.getContext('2d');
 	cs=66;
+	game_over=false;
 
 	food = getRandomFood();
 
@@ -78,6 +79,15 @@ function init(){
 			}
 
 			this.cells.unshift({x:nextX,y:nextY});
+
+			// Logic that will prevent the snake from going out.
+
+			var last_x = Math.round(W/cs);
+			var last_y = Math.round(H/cs);
+
+			if(this.cells[0].y <0 || this.cells[0].x <0 || this.cells[0].y>last_y || this.cells[0].x>last_x){
+				game_over=true;
+			}
 		},
 	};
 
@@ -135,6 +145,10 @@ function getRandomFood(){
 }
 
 function gameloop(){
+	if(game_over==true){
+		clearInterval(f);
+		alert("Game Over");
+	}
 	draw();
 	update();
 }
