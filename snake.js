@@ -47,11 +47,18 @@ function init(){
 			if(headX==food.x && headY==food.y){
 				console.log("Food eaten");
 				food = getRandomFood();
+			// When food is eaten, the last cell will not pop out because the else block will not run.
+			// As a result, the length of snake will increase by 1.
 
+			// When food is not eaten, the last cell will pop out.
+			// Remember, the update function is being called again and again.
+			// Due to which, the snake is moving cell by cell.
+			}else{
+				this.cells.pop();
 			}
 
 			//generate new food object as well.
-			this.cells.pop();
+			//this.cells.pop();
 			var nextX, nextY;
 
 			if(this.direction=="right"){
