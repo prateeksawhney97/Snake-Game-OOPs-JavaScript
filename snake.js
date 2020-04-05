@@ -112,6 +112,7 @@ function draw(){
 	snake.drawSnake();
 
 	//for showing the food object
+	pen.fillStyle = food.color;
 	pen.fillRect(food.x*cs,food.y*cs,cs,cs);
 
 }
