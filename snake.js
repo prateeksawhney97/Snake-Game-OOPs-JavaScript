@@ -4,6 +4,7 @@ function init(){
 	pen = canvas.getContext('2d');
 	cs=66;
 	game_over=false;
+	score = 5;
 
 
 	//Create an image for the the food
@@ -53,6 +54,7 @@ function init(){
 			if(headX==food.x && headY==food.y){
 				console.log("Food eaten");
 				food = getRandomFood();
+				score++;
 			// When food is eaten, the last cell will not pop out because the else block will not run.
 			// As a result, the length of snake will increase by 1.
 
@@ -133,6 +135,11 @@ function draw(){
 	
 	//Food as an Image of apple
 	pen.drawImage(food_img, food.x*cs,food.y*cs,cs,cs);
+
+	//Display the score
+	pen.fillStyle = "blue";
+	pen.font = "20px Roboto";
+	pen.fillText(score, 50, 50);
 
 }
 
