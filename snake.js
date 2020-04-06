@@ -95,7 +95,7 @@ function init(){
 			var last_x = Math.round(W/cs);
 			var last_y = Math.round(H/cs);
 
-			if(this.cells[0].y <0 || this.cells[0].x <0 || this.cells[0].y>last_y || this.cells[0].x>last_x){
+			if(this.cells[0].y <0 || this.cells[0].x <0 || this.cells[0].y>last_y-1 || this.cells[0].x>last_x-1){
 				game_over=true;
 			}
 		},
