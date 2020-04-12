@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>Snake Game</title>
+		<style type="text/css">
+			#mycanvas {
+				background-image: url("assets/bg.jpg");
+
+				border: 20px solid green;
+			}
+			.contain{
+				text-align: center;
+				display: inline-block;
+			}
+			#bg {
+				border-radius: 5%;
+			}
+			body {
+ 				background-color: #00ffff;
+ 			}
+
+ 		</style>
+		<script type="text/javascript">
+        function zoom() {
+            document.body.style.zoom = "50%" 
+        }
+		</script>
+	</head>
+	
+
+	<body onload="zoom()">
+		
+		<div class="contain">
+			<canvas id="mycanvas"></canvas>
+		</div>
+
+		<div class="contain">
+			<div>
+  			<a href="https://github.com/prateeksawhney97" target="_blank"><img src="assets/fork-me-on-github.png"></a>
+  			</div>
+  		</div>
+
+  		<div class="contain">
+  			<img src="assets/bg-image.png" id="bg">
+  		</div>
+
+		<script src="snake.js"></script>
+		
+		<div style="background-color:rgb(106, 90, 205); border-radius: 10px;">
+			<div style="background-color:DodgerBlue; margin-top: 5px; height: 100px; border-radius: 10px;">
+			<p style="font-size:60px; text-align: center;">A Snake Game based on JavaScript</p>
+			</div>
+			<p style="font-size:55px; text-align: center;">Refresh the page to start a new session!</p>
+		</div>
+
+		
+	</body>
+</html>
